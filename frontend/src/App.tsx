@@ -2,8 +2,9 @@ import { useState } from "react";
 import JobFeed from "./components/JobFeed";
 import FilterSidebar from "./components/FilterSidebar";
 import ApplyPopup from "./components/ApplyPopup";
+import ApplicationsDashboard from "./components/ApplicationsDashboard";
 import { Filters } from "./types/filters";
-import { Application } from "./types/application";
+import { Application, ApplicationStatus } from "./types/application";
 import { Job } from "./types/job";
 
 function App() {
@@ -16,6 +17,17 @@ function App() {
   const [applications, setApplications] = useState<Application[]>([]);
   const [pendingJob, setPendingJob] = useState<Job | null>(null);
 
+  const handleStatusChange = (
+    jobId: string,
+    status: ApplicationStatus
+  ) => {
+    setApplications((prev) =>
+      prev.map((app) =>
+        app.jobId === jobId ? { ...app, status } : app
+      )
+    );
+  };
+
   return (
     <div style={{ display: "flex" }}>
       <FilterSidebar filters={filters} onChange={setFilters} />
@@ -25,13 +37,17 @@ function App() {
 
         <JobFeed
           filters={filters}
-          onApply={(job) => {
-            setPendingJob(job);
-          }}
+          onApply={(job) => setPendingJob(job)}
+        />
+
+        <hr style={{ margin: "30px 0" }} />
+
+        <ApplicationsDashboard
+          applications={applications}
+          onStatusChange={handleStatusChange}
         />
       </div>
 
-      {/* Popup */}
       {pendingJob && (
         <ApplyPopup
           job={pendingJob}
