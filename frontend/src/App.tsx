@@ -4,6 +4,7 @@ import FilterSidebar from "./components/FilterSidebar";
 import ApplyPopup from "./components/ApplyPopup";
 import ApplicationsDashboard from "./components/ApplicationsDashboard";
 import AIAssistant from "./components/AIAssistant";
+
 import type { Filters } from "./types/filters";
 import type { Application, ApplicationStatus } from "./types/application";
 import type { Job } from "./types/job";
@@ -49,7 +50,6 @@ function App() {
         />
       </div>
 
-      {/* AI Assistant Sidebar */}
       <AIAssistant
         onAction={(data) => {
           if (data.action === "update_filters") {
@@ -65,7 +65,6 @@ function App() {
         }}
       />
 
-      {/* Apply confirmation popup */}
       {pendingJob && (
         <ApplyPopup
           job={pendingJob}
