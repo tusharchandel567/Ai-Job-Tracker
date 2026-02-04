@@ -15,9 +15,11 @@ export default function JobCard({ job }: Props) {
       }}
     >
       <h3>{job.title}</h3>
+
       <p>
         <strong>{job.company}</strong> · {job.location}
       </p>
+
       <p>{job.description}</p>
 
       <div style={{ fontSize: "14px", color: "#555" }}>
