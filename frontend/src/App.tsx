@@ -3,6 +3,7 @@ import JobFeed from "./components/JobFeed";
 import FilterSidebar from "./components/FilterSidebar";
 import ApplyPopup from "./components/ApplyPopup";
 import ApplicationsDashboard from "./components/ApplicationsDashboard";
+import AIAssistant from "./components/AIAssistant";
 import { Filters } from "./types/filters";
 import { Application, ApplicationStatus } from "./types/application";
 import { Job } from "./types/job";
@@ -48,6 +49,23 @@ function App() {
         />
       </div>
 
+      {/* AI Assistant Sidebar */}
+      <AIAssistant
+        onAction={(data) => {
+          if (data.action === "update_filters") {
+            if (data.payload?.clear) {
+              setFilters({ role: "", location: "", jobType: "" });
+            } else {
+              setFilters((prev) => ({
+                ...prev,
+                ...data.payload,
+              }));
+            }
+          }
+        }}
+      />
+
+      {/* Apply confirmation popup */}
       {pendingJob && (
         <ApplyPopup
           job={pendingJob}
