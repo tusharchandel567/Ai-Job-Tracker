@@ -10,6 +10,7 @@ export const jobs: Job[] = [
     jobType: "Full-time",
     workMode: "Remote",
     postedDate: "2026-02-01",
+    matchScore: 82,
   },
   {
     id: "2",
@@ -20,5 +21,6 @@ export const jobs: Job[] = [
     jobType: "Contract",
     workMode: "Remote",
     postedDate: "2026-01-28",
+    matchScore: 55,
   },
 ];

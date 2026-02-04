@@ -7,4 +7,7 @@ export type Job = {
   jobType: "Full-time" | "Part-time" | "Contract" | "Internship";
   workMode: "Remote" | "Hybrid" | "On-site";
   postedDate: string;
+
+  // AI match (placeholder for now)
+  matchScore?: number;
 };
