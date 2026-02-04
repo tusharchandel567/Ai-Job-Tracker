@@ -1,7 +1,7 @@
 import JobCard from "./JobCard";
 import { jobs } from "../data/jobs";
-import { Filters } from "../types/filters";
-import { Job } from "../types/job";
+import type { Filters } from "../types/filters";
+import type { Job } from "../types/job";
 
 type Props = {
   filters: Filters;

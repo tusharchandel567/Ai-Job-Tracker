@@ -1,4 +1,4 @@
-import { Application, ApplicationStatus } from "../types/application";
+import type { Application, ApplicationStatus } from "../types/application";
 
 type Props = {
   applications: Application[];

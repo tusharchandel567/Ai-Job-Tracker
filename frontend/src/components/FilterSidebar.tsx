@@ -1,4 +1,4 @@
-import { Filters } from "../types/filters";
+import type { Filters } from "../types/filters";
 
 type Props = {
   filters: Filters;

@@ -4,9 +4,9 @@ import FilterSidebar from "./components/FilterSidebar";
 import ApplyPopup from "./components/ApplyPopup";
 import ApplicationsDashboard from "./components/ApplicationsDashboard";
 import AIAssistant from "./components/AIAssistant";
-import { Filters } from "./types/filters";
-import { Application, ApplicationStatus } from "./types/application";
-import { Job } from "./types/job";
+import type { Filters } from "./types/filters";
+import type { Application, ApplicationStatus } from "./types/application";
+import type { Job } from "./types/job";
 
 function App() {
   const [filters, setFilters] = useState<Filters>({
