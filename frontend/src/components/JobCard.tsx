@@ -2,9 +2,10 @@ import { Job } from "../types/job";
 
 type Props = {
   job: Job;
+  onApply: (job: Job) => void;
 };
 
-export default function JobCard({ job }: Props) {
+export default function JobCard({ job, onApply }: Props) {
   const score = job.matchScore ?? 0;
 
   // Decide badge color based on score
@@ -64,6 +65,13 @@ export default function JobCard({ job }: Props) {
           marginTop: "10px",
           padding: "6px 12px",
           cursor: "pointer",
+        }}
+        onClick={() => {
+          // Open external job link (placeholder for now)
+          window.open("https://example.com", "_blank");
+
+          // Notify parent that user clicked Apply
+          onApply(job);
         }}
       >
         Apply

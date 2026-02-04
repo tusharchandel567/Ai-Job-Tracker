@@ -1,12 +1,14 @@
 import JobCard from "./JobCard";
 import { jobs } from "../data/jobs";
 import { Filters } from "../types/filters";
+import { Job } from "../types/job";
 
 type Props = {
   filters: Filters;
+  onApply: (job: Job) => void;
 };
 
-export default function JobFeed({ filters }: Props) {
+export default function JobFeed({ filters, onApply }: Props) {
   const filteredJobs = jobs.filter((job) => {
     const matchRole =
       !filters.role ||
@@ -25,7 +27,7 @@ export default function JobFeed({ filters }: Props) {
   return (
     <div>
       {filteredJobs.map((job) => (
-        <JobCard key={job.id} job={job} />
+        <JobCard key={job.id} job={job} onApply={onApply} />
       ))}
     </div>
   );
