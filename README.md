@@ -5,7 +5,7 @@ An AI-powered job tracking platform that fetches jobs, matches them against a us
 ---
 
 ## 🚀 Live Demo
-🔗 https://your-live-url-here
+🔗 [https://your-live-url-here](https://ai-job-tracker-j335mwo1o-tusharchandel567s-projects.vercel.app/)
 
 ## 📦 GitHub Repository
 🔗 https://github.com/tusharchandel567/Ai-Job-Tracker
